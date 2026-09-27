@@ -1,0 +1,16 @@
+# Local environment variables (may contain secrets)
+.env
+.env.*
+!.env.example
+
+# Python bytecode and cache files
+__pycache__/
+*.py[cod]
+
+# Local virtual environments
+.venv/
+venv/
+env/
+
+# Local Flask configuration and data
+instance/
