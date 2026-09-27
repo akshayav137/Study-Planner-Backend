@@ -166,11 +166,33 @@ To run any test in PowerShell, replace the JSON in this block with the test body
 '@ | curl.exe -i -X POST "http://127.0.0.1:5000/generate-plan" -H "Content-Type: application/json" --data-binary "@-"
 The -i option displays the HTTP status and response headers along with the JSON. Keep Flask running in a separate terminal.
 
-
-2:07 PM
+USER PROMPT:
+I'm deploying this Flask repository to Render as a Web Service. Here is my `app.py` and `requirements.txt`: Flask
+Flask-Cors
+gunicorn
+&#x20;Tell me exactly what I should enter for Render's Build Command and Start Command. Also tell me whether I need to modify `requirements.txt` for production deployment. Don't change anything unrelated.
+CODEX OUTPUT:
+Enter these exact values in Render:
+Build Command
+pip install -r requirements.txt
+Start Command
+gunicorn app:app
+These match Render’s Flask deployment instructions. In app:app, the first app identifies app.py, and the second identifies your app = Flask(__name__) variable.
+No changes to requirements.txt are needed. Your existing dependencies cover this deployment:
+Flask
+Flask-Cors
+gunicorn
+Your app.py can also stay unchanged: Gunicorn imports the application, so the local app.run() block does not execute.
+If both files are at the repository’s top level, leave Render’s Root Directory blank.
 
 
 USER PROMPT:
 
+
 CODEX OUTPUT:
+
+USER PROMPT:
+
+CODEX OUTPUT:
+
 
